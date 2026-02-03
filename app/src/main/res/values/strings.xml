@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Payfood</string>
+    <string name="test_name_string_1">Ксения Воробьёва</string>
+    <string name="test_name_string_2">Глеб Рыжов</string>
+    <string name="card_balance">Баланс карты</string>
+    <string name="test_balance_string_1">5846</string>
+    <string name="test_balance_string_2">-5555345</string>
+    <string name="top_up">Пополнить</string>
+    <string name="history">История</string>
+    <string name="current_month">Текущий месяц</string>
+    <string name="all_months">Все месяцы</string>
+</resources>
