@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.OutlinedIconButton
@@ -30,7 +32,10 @@ import com.pseleventy.payfood.util.TextSnippets
 fun TopUpButton(onTopUp: () -> Unit) {
     OutlinedIconButton(
         onClick = onTopUp,
-        modifier = Modifier.fillMaxWidth().height(54.dp).clip(AbsoluteRoundedCornerShape(bottomLeft = 29.dp, topRight = 30.dp)),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(54.dp)
+            .clip(AbsoluteRoundedCornerShape(bottomLeft = 29.dp, topRight = 30.dp)),
         colors = IconButtonDefaults.iconButtonColors(
             containerColor = colorResource(R.color.transparent_button_fill)
         ),

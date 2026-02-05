@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedIconButton
@@ -21,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pseleventy.payfood.R
+import com.pseleventy.payfood.presentation.MainPageVM
 import com.pseleventy.payfood.ui.mainPage.AvatarSection
 import com.pseleventy.payfood.ui.mainPage.Background
 import com.pseleventy.payfood.ui.mainPage.BalanceSection
@@ -33,7 +36,8 @@ import com.pseleventy.payfood.util.TextSnippets
 fun MainPageComponent(
     onTopUp: () -> Unit
 ) {
-    val currentBalance = stringResource(R.string.test_balance_string_2)
+    val viewModel = MainPageVM()
+    val currentBalance = stringResource(R.string.test_balance_string_1)
 
     MainPageHeader()
 
@@ -44,6 +48,7 @@ fun MainPageComponent(
         modifier = Modifier
             .padding(horizontal = 20.dp)
             .offset(y = 95.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         Spacer(Modifier.height(35.dp))
 
@@ -51,7 +56,7 @@ fun MainPageComponent(
 
         Spacer(Modifier.height(24.dp))
 
-        BalanceSection(currentBalance)
+        BalanceSection(viewModel, currentBalance)
 
         Spacer(Modifier.height(24.dp))
 
@@ -59,6 +64,6 @@ fun MainPageComponent(
 
         Spacer(Modifier.height(57.dp))
 
-        HistorySection()
+        HistorySection(viewModel)
     }
 }

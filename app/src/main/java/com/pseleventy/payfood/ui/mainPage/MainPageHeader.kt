@@ -22,8 +22,13 @@ import com.pseleventy.payfood.R
 @Composable
 fun MainPageHeader() {
     Column(
-       modifier = Modifier.background(color = colorResource(
-           R.color.white)).fillMaxWidth()
+        modifier = Modifier
+            .background(
+                color = colorResource(
+                    R.color.white
+                )
+            )
+            .fillMaxWidth()
     ) {
         Spacer(Modifier.height(40.dp))
 

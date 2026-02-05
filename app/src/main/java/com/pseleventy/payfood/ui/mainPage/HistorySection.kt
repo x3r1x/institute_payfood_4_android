@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
@@ -23,10 +24,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pseleventy.payfood.R
+import com.pseleventy.payfood.presentation.MainPageVM
 import com.pseleventy.payfood.util.TextSnippets
 
 @Composable
-fun HistorySection() {
+fun HistorySection(viewModel: MainPageVM) {
     var currentSelection: HistorySelection by remember { mutableStateOf(HistorySelection.CURRENT_MONTH) }
 
     Text(
@@ -37,17 +39,23 @@ fun HistorySection() {
         fontWeight = FontWeight.Medium
     )
 
+    Spacer(Modifier.height(16.dp))
+
     Row {
         OutlinedButton(
             onClick = { currentSelection = HistorySelection.CURRENT_MONTH },
             colors = ButtonDefaults.buttonColors(
-                containerColor = if (currentSelection == HistorySelection.CURRENT_MONTH) colorResource(R.color.white) else colorResource(R.color.transparent_button_fill)
+                containerColor = if (currentSelection == HistorySelection.CURRENT_MONTH) colorResource(
+                    R.color.white
+                ) else colorResource(R.color.transparent_button_fill)
             ),
             border = if (currentSelection != HistorySelection.CURRENT_MONTH) BorderStroke(
                 width = 0.5.dp,
                 color = colorResource(R.color.white)
             ) else null,
-            modifier = if (currentSelection != HistorySelection.CURRENT_MONTH) Modifier.clip(AbsoluteRoundedCornerShape(bottomLeft = 27.dp, topRight = 27.dp)) else Modifier,
+            modifier = if (currentSelection != HistorySelection.CURRENT_MONTH) Modifier.clip(
+                AbsoluteRoundedCornerShape(bottomLeft = 27.dp, topRight = 27.dp)
+            ) else Modifier,
             contentPadding = PaddingValues(
                 horizontal = 15.dp,
                 vertical = 10.dp
@@ -55,7 +63,9 @@ fun HistorySection() {
             content = {
                 Text(
                     text = stringResource(R.string.current_month),
-                    color = if (currentSelection == HistorySelection.CURRENT_MONTH) colorResource(R.color.light_black) else colorResource(R.color.light_text_white),
+                    color = if (currentSelection == HistorySelection.CURRENT_MONTH) colorResource(R.color.light_black) else colorResource(
+                        R.color.light_text_white
+                    ),
                     fontSize = 16.sp,
                     fontFamily = TextSnippets.manropeFont,
                     fontWeight = FontWeight.Medium
@@ -68,13 +78,17 @@ fun HistorySection() {
         OutlinedButton(
             onClick = { currentSelection = HistorySelection.ALL_MONTHS },
             colors = ButtonDefaults.buttonColors(
-                containerColor = if (currentSelection == HistorySelection.ALL_MONTHS) colorResource(R.color.white) else colorResource(R.color.transparent_button_fill)
+                containerColor = if (currentSelection == HistorySelection.ALL_MONTHS) colorResource(
+                    R.color.white
+                ) else colorResource(R.color.transparent_button_fill)
             ),
             border = if (currentSelection != HistorySelection.ALL_MONTHS) BorderStroke(
                 width = 0.5.dp,
                 color = colorResource(R.color.white)
             ) else null,
-            modifier = if (currentSelection != HistorySelection.ALL_MONTHS) Modifier.clip(AbsoluteRoundedCornerShape(bottomLeft = 26.5.dp, topRight = 26.5.dp)) else Modifier,
+            modifier = if (currentSelection != HistorySelection.ALL_MONTHS) Modifier.clip(
+                AbsoluteRoundedCornerShape(bottomLeft = 26.5.dp, topRight = 26.5.dp)
+            ) else Modifier,
             contentPadding = PaddingValues(
                 horizontal = 15.dp,
                 vertical = 10.dp
@@ -82,13 +96,24 @@ fun HistorySection() {
             content = {
                 Text(
                     text = stringResource(R.string.all_months),
-                    color = if (currentSelection == HistorySelection.ALL_MONTHS) colorResource(R.color.light_black) else colorResource(R.color.light_text_white),
+                    color = if (currentSelection == HistorySelection.ALL_MONTHS) colorResource(R.color.light_black) else colorResource(
+                        R.color.light_text_white
+                    ),
                     fontSize = 16.sp,
                     fontFamily = TextSnippets.manropeFont,
                     fontWeight = FontWeight.Medium
                 )
             }
         )
+    }
+
+    Spacer(Modifier.height(16.dp))
+
+    if (currentSelection === HistorySelection.CURRENT_MONTH) {
+        ThisMonthColumn()
+    }
+    if (currentSelection === HistorySelection.ALL_MONTHS) {
+        AllMonthsColumn(viewModel)
     }
 }
 

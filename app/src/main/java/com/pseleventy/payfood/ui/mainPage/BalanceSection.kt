@@ -16,9 +16,7 @@ import com.pseleventy.payfood.presentation.MainPageVM
 import com.pseleventy.payfood.util.TextSnippets
 
 @Composable
-fun BalanceSection(balance: String) {
-    val viewModel = MainPageVM()
-
+fun BalanceSection(viewModel: MainPageVM, balance: String) {
     Column {
         Text(
             text = stringResource(R.string.card_balance),
@@ -32,7 +30,9 @@ fun BalanceSection(balance: String) {
 
         Text(
             text = viewModel.validateBalanceText(balance),
-            color = if (balance.toFloat() > 0) colorResource(R.color.light_text_white) else colorResource(R.color.balance_text_red),
+            color = if (balance.toFloat() > 0) colorResource(R.color.light_text_white) else colorResource(
+                R.color.balance_text_red
+            ),
             fontSize = 42.sp,
             fontFamily = TextSnippets.manropeFont,
             fontWeight = FontWeight.Bold
