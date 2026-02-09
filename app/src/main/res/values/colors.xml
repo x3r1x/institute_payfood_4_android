@@ -7,4 +7,6 @@
     <color name="balance_text_red">#FFE93F3F</color>
     <color name="transparent_button_fill">#45F9F9F9</color>
     <color name="light_black">#FF24272A</color>
+    <color name="light_grey">#FFA9A9A9</color>
+    <color name="green">#FF61A861</color>
 </resources>

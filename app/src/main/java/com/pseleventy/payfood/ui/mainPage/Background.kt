@@ -29,12 +29,12 @@ fun Background(isBalancePositive: Boolean) {
     )
 
     Image(
-        bitmap = ImageBitmap.imageResource(if (isBalancePositive) R.drawable.backgroung_positive else R.drawable.background_negative),
+        bitmap = ImageBitmap.imageResource(if (isBalancePositive) R.drawable.background_positive else R.drawable.background_negative),
         contentDescription = "Gradient Background",
         modifier = Modifier
             .zIndex((-1).toFloat())
-            .fillMaxWidth()
-            .height(600.dp),
+            .offset(y = 80.dp)
+            .fillMaxWidth(),
         contentScale = ContentScale.FillWidth
     )
 }

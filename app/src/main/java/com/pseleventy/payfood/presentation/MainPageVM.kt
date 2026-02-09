@@ -8,7 +8,7 @@ class MainPageVM {
         for (i in 1 until originalStringBackwards.length + 1) {
             splitString += originalStringBackwards[i - 1]
 
-            if (i % 3 == 0 && originalStringBackwards.length > i && originalStringBackwards[i] != '-') {
+            if (i % 3 == 0 && originalStringBackwards.length > i && originalStringBackwards[i] != '-' && originalStringBackwards[i] != '+') {
                 splitString += " "
             }
         }
@@ -21,6 +21,14 @@ class MainPageVM {
         val year = monthYear.slice(3..monthYear.length - 1)
 
         return "$month $year"
+    }
+
+    fun validateDayMonthText(dayMonth: String): String {
+        val day = dayMonth.slice(0..dayMonth.indexOf('.') - 1)
+        val month =
+            MONTH_NUMBER_TO_STRING[dayMonth.slice(dayMonth.indexOf('.') + 1..dayMonth.length - 1)]
+
+        return "$month, $day"
     }
 
     companion object {

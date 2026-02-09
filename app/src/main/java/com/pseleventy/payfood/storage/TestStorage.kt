@@ -3,8 +3,6 @@ package com.pseleventy.payfood.storage
 import com.pseleventy.payfood.presentation.IAction
 import com.pseleventy.payfood.presentation.Replenishment
 import com.pseleventy.payfood.presentation.Spending
-import com.pseleventy.payfood.util.parseToInstant
-import kotlin.time.Instant
 
 object TestStorage {
     val AllMonthsTestStorage: Map<String, String> = mapOf(
@@ -18,78 +16,78 @@ object TestStorage {
     )
 
     val firstSpending = Spending(
-        date = "2026-01-23 00:00:00".parseToInstant(),
+        date = "23.01",
         positons = mapOf(
-            "2026-01-23 12:01:23".parseToInstant() to mapOf(
+            "12:01" to mapOf(
                 "Обед 2-4 курс" to 0,
                 "Пирожок с яблоками" to 33,
                 "Пирожок с  капустой и яйцом" to 27
             ),
-            "2026-01-23 08:05:54".parseToInstant() to mapOf(
+            "08:05" to mapOf(
                 "Завтрак" to 100
             )
         )
     )
 
     val secondSpending = Spending(
-        date = "2026-01-24 00:00:00".parseToInstant(),
+        date = "24.01",
         positons = mapOf(
-            "2026-01-24 16:32:23".parseToInstant() to mapOf(
+            "16:32" to mapOf(
                 "Картофельное пюре" to 40,
                 "Макароны отварные" to 46
             ),
-            "2026-01-24 12:01:02".parseToInstant() to mapOf(
+            "12:01" to mapOf(
                 "Обед 2-4 курс" to 0
             )
         )
     )
 
     val thirdSpending = Spending(
-        date = "2026-01-25 00:00:00".parseToInstant(),
+        date = "25.01",
         positons = mapOf(
-            "2026-01-25 12:23:42".parseToInstant() to mapOf(
+            "12:23" to mapOf(
                 "Обед 2-4 курс" to 0
             )
         )
     )
 
     val fourthSpending = Spending(
-        date = "2026-01-25 00:00:00".parseToInstant(),
+        date = "26.01",
         positons = mapOf(
-            "2026-01-25 15:08:00".parseToInstant() to mapOf(
-                "Шарлотка с яблоками" to 1105
+            "15:08" to mapOf(
+                "Шарлотка с яблоками" to 110
             ),
-            "2026-01-25 12:08:00".parseToInstant() to mapOf(
+            "12:08" to mapOf(
                 "Филе куриное под сыром" to 114,
                 "Каша гречневая рассыпчатая" to 30,
                 "Салат греческий" to 100,
                 "Обед 2-4 курс" to 0,
                 "Шарлотка с яблоками" to 110
             ),
-            "2026-01-25 08:12:00".parseToInstant() to mapOf(
+            "08:12" to mapOf(
                 "Завтрак" to 100
             )
         )
     )
 
     val fifthSpending = Spending(
-        date = "2026-01-26 00:00:00".parseToInstant(),
+        date = "27.01",
         positons = mapOf(
-            "2026-01-26 15:34:00".parseToInstant() to mapOf(
+            "15:34" to mapOf(
                 "Манник со сгущёнкой" to 28,
                 "Сок порционный" to 35,
                 "Cок порционный" to 35
             ),
-            "2026-01-26 11:58:00".parseToInstant() to mapOf(
+            "11:58" to mapOf(
                 "Обед 2-4 курс" to 0
             )
         )
     )
 
     val sixthSpending = Spending(
-        date = "2026-01-27 00:00:00".parseToInstant(),
+        date = "28.01",
         positons = mapOf(
-            "2026-01-27 12:01:00".parseToInstant() to mapOf(
+            "12:01" to mapOf(
                 "Картофель запечёный" to 35,
                 "Обед 2-4 курс" to 0
             )
@@ -97,18 +95,18 @@ object TestStorage {
     )
 
     val replenishment = Replenishment(
-        date = "2026-01-28 00:00:00".parseToInstant(),
+        date = "29.01",
         replenishmentAmount = "6000"
     )
 
     val seventhSpending = Spending(
-        date = "2026-01-28 00:00:00".parseToInstant(),
+        date = "29.01",
         positons = mapOf(
-            "2026-01-28 13:28:00".parseToInstant() to mapOf(
+            "13:28" to mapOf(
                 "Пицца с варёной колбасой" to 59,
                 "Обед 2-4 курс" to 0
             ),
-            "2026-01-28 08:10:00".parseToInstant() to mapOf(
+            "08:10" to mapOf(
                 "Завтрак" to 100,
                 "Яблоко" to 30
             )

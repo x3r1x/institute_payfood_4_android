@@ -3,14 +3,11 @@ package com.pseleventy.payfood.presentation
 import kotlin.time.Instant
 
 class Spending(
-    override val date: Instant,
-    private val positons: Map<Instant, Map<String, Int>>
-): IAction {
-    fun getDate(): Instant {
-        return date
-    }
-
-    fun getPositions(): Map<Instant, Map<String, Int>> {
+    override val date: String,
+    private val positons: Map<String, Map<String, Int>>
+    //Первый String - дата, внутри Map: String - время, Int - стоимость
+) : IAction {
+    fun getPositions(): Map<String, Map<String, Int>> {
         return positons
     }
 

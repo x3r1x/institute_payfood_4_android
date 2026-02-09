@@ -9,4 +9,5 @@
     <string name="history">История</string>
     <string name="current_month">Текущий месяц</string>
     <string name="all_months">Все месяцы</string>
+    <string name="replenishment">Пополнение</string>
 </resources>
