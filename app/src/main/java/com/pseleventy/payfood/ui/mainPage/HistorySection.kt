@@ -110,7 +110,7 @@ fun HistorySection(viewModel: MainPageVM) {
     Spacer(Modifier.height(16.dp))
 
     if (currentSelection === HistorySelection.CURRENT_MONTH) {
-        ThisMonthColumn()
+        ThisMonthColumn(viewModel)
     }
     if (currentSelection === HistorySelection.ALL_MONTHS) {
         AllMonthsColumn(viewModel)
