@@ -29,6 +29,7 @@ fun MainPageHeader() {
                 )
             )
             .fillMaxWidth()
+            .zIndex(1.toFloat())
     ) {
         Spacer(Modifier.height(40.dp))
 

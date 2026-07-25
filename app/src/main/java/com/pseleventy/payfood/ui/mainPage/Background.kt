@@ -10,11 +10,14 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.pseleventy.payfood.R
@@ -25,7 +28,7 @@ fun Background(isBalancePositive: Boolean) {
         Modifier
             .fillMaxSize()
             .background(color = colorResource(R.color.grey))
-            .zIndex((-1).toFloat())
+            .zIndex((-2).toFloat())
     )
 
     Image(
@@ -33,7 +36,7 @@ fun Background(isBalancePositive: Boolean) {
         contentDescription = "Gradient Background",
         modifier = Modifier
             .zIndex((-1).toFloat())
-            .offset(y = 80.dp)
+            .offset(y = 95.dp)
             .fillMaxWidth(),
         contentScale = ContentScale.FillWidth
     )
